@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h2>Atividades e Descrições</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Atividade</th>
+                <th>Descrição</th>
+                <th>Tempo de Elaboração</th>
+                <th>Tempo Economizado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for activity in activities %}
+                <tr>
+                    <td>{{ activity.Atividade }}</td>
+                    <td>{{ activity.Descrição }}</td>
+                    <td>{{ activity['Tempo de Elaboracao'] }}</td>
+                    <td>{{ activity['Tempo Economizado'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <h2>Comparativo Total</h2>
+    <p>Tempo de Elaboração Total: {{ total_elaboracao }}</p>
+    <p>Tempo Economizado Total: {{ total_economizado }}</p>
+    <div class="chart">
+        {{ total_comparison_chart|safe }}
+    </div>
+{% endblock %}

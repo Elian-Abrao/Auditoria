@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h2>Comparação de Tempo para {{ activity }} em minutos</h2>
+    <div class="chart">
+        {{ comparison_chart|safe }}
+    </div>
+{% endblock %}
